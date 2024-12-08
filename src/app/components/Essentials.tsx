@@ -22,7 +22,7 @@ const Essentials = () => {
         {/* Image Card 1 */}
         <div className="relative w-[440px] sm:w-[300px] h-[300px] overflow-hidden rounded-lg shadow-md">
           <Image
-            src="/e1.png" // Replace with the actual image path
+            src="/e1.png" 
             alt="Men's Product"
             layout="fill"
             objectFit="cover"
@@ -36,7 +36,7 @@ const Essentials = () => {
         {/* Image Card 2 */}
         <div className="relative w-[440px] sm:w-[300px] h-[300px] overflow-hidden rounded-lg shadow-md">
           <Image
-            src="/e2.png" // Replace with the actual image path
+            src="/e2.png" 
             alt="Women's Product"
             layout="fill"
             objectFit="cover"
@@ -50,7 +50,7 @@ const Essentials = () => {
         {/* Image Card 3 */}
         <div className="relative w-[440px] sm:w-[300px] h-[300px] overflow-hidden rounded-lg shadow-md">
           <Image
-            src="/e3.png" // Replace with the actual image path
+            src="/e3.png" 
             alt="Kid's Product"
             layout="fill"
             objectFit="cover"

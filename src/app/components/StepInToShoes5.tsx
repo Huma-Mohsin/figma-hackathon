@@ -9,8 +9,8 @@ const StepIntoShoes = () => {
         {/* Image Section with extended left and right margins */}
         <div className="relative w-full overflow-hidden">
           <Image
-            src="/featured.jpg" // Replace with your image path
-            alt="Running Man"
+            src="/featured.jpg" 
+            alt="ManShoes"
             width={1600} // Wider width for a larger image
             height={800} // Increased height for better proportions
             className="w-full h-auto object-cover sm:w-[110%] md:w-[120%] lg:w-[130%] -mx-4 sm:-mx-6 md:-mx-8 lg:-mx-12"
