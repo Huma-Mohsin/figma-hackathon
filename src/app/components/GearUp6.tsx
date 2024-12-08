@@ -38,7 +38,7 @@ const GearUp = () => {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
             {/* Men's Section */}
             <div className="text-center flex flex-col items-center">
-              <Image src="/image1.png" alt="Men's Top" width={300} height={300} className="rounded-lg" />
+              <Image src="/Image1.png" alt="Men's Top" width={300} height={300} className="rounded-lg" />
               <p className="text-black font-medium mt-4">Nike Dri-FIT ADV TechKnit Ultra</p>
               <p className="text-black text-right text-sm">₹ 3,895</p>
               <p className="text-gray-600 font-normal font-sans mt-2">Men's Short-Sleeve Running Top</p>
