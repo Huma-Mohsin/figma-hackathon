@@ -18,7 +18,7 @@ const NikeAirPlus = () => {
           First Look
         </h1>
         <h2 className="text-[#111111] text-4xl sm:text-3xl md:text-2xl font-sans font-bold mt-2">
-          NIKE AIr MAX PULSE
+          NIKE AIR MAX PULSE
         </h2>
         <p className="text-[#111111] text-xl sm:text-lg md:text-base font-sans mt-4 px-4">
           Extreme comfort. Hyper durable. Max volume. Introducing the Air Max Pulse

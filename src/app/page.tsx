@@ -1,16 +1,16 @@
 
-import BestAirMax from "./components/BestAirmax4";
+import BestAirMax from "./components/4BestAirmax";
 
-import DoNotMissSection from "./components/DonotMiss";
-import Essentials from "./components/Essentials";
-import Footer from "./components/Footer";
-import GearUp from "./components/GearUp6";
+import DoNotMissSection from "./components/7DonotMiss";
+import Essentials from "./components/8Essentials";
+import Footer from "./components/9Footer";
+import GearUp from "./components/6GearUp";
 
-import HelloNikeText from "./components/HelloNikeText2";
+import HelloNikeText from "./components/2HelloNikeText";
 
-import NikeAirPlus from "./components/NikeAirPlus3";
+import NikeAirPlus from "./components/3NikeAirPlus";
 
-import StepIntoShoes from "./components/StepInToShoes5";
+import StepIntoShoes from "./components/5StepInToShoes";
 
 
 export default function Home() {
