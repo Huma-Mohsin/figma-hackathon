@@ -13,7 +13,7 @@ const Navbar = () => {
         <Image src={"/logo.png"} alt="Logo" width={150} height={100} className="w-[40px] sm:w-[60px] lg:w-[80px] ml-4" />
 
         {/* Links Section */}
-        <nav className="hidden sm:flex items-center space-x-4 text-black text-sm sm:text-base md:text-lg font-medium">
+        <nav className="flex sm:flex hidden md:flex items-center space-x-4 text-black text-sm sm:text-base md:text-lg font-medium">
           <Link href="/findstore">Find a Store</Link>
           <span className="hidden sm:inline-block h-[14px] w-[1px] bg-gray-400" />
           <Link href="/help">Help</Link>
@@ -31,7 +31,7 @@ const Navbar = () => {
           <Image src={"/nikelogo.png"} width={150} height={150} alt="Logo" className="w-[50px] sm:w-[70px] md:w-[80px] ml-8" />
 
           {/* Navigation Links */}
-          <nav className="hidden md:flex space-x-8 justify-center items-center font-medium">
+          <nav className="flex space-x-8 justify-center items-center font-medium">
             <Link href="/overallproducts" className="text-black hover:underline text-sm md:text-base">New & Featured</Link>
             <Link href="/overallproducts" className="text-black hover:underline text-sm md:text-base">Men</Link>
             <Link href="/overallproducts" className="text-black hover:underline text-sm md:text-base">Women</Link>
