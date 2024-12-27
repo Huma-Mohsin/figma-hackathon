@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaThumbsUp, FaThumbsDown, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaComments } from 'react-icons/fa';
-import Image from 'next/image';
+
 import Link from 'next/link';
 
 const Helppage = () => {

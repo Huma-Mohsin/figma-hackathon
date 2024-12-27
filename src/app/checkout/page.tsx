@@ -1,6 +1,5 @@
 import React from 'react';
 import { FiTruck } from 'react-icons/fi';
-import { BsCartFill } from 'react-icons/bs';
 import Image from 'next/image';
 
 const Checkoutpage = () => {
