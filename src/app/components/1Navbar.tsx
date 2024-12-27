@@ -7,46 +7,47 @@ import { BsBag } from "react-icons/bs";
 const Navbar = () => {
   return (
     <div>
-      <header className="bg-[#F5F5F5] border-b font-[Helvetica Neue] flex justify-between items-center px-4 sm:px-8 md:px-10 py-2">
+      {/* Header Section */}
+      <header className="bg-[#F5F5F5] border-b font-[Helvetica Neue] flex justify-between items-center px-4 sm:px-8 md:px-10 lg:px-12 xl:px-16 py-2">
         {/* Logo Section */}
-        <Image src={"/logo.png"} alt="Logo" width={200} height={200} className="w-[50px] sm:w-[80px] ml-4" />
+        <Image src={"/logo.png"} alt="Logo" width={150} height={100} className="w-[40px] sm:w-[60px] lg:w-[80px] ml-4" />
 
         {/* Links Section */}
-        <nav className="hidden sm:flex items-center space-x-3 text-black text-[14px] sm:text-[16px] font-medium">
-          <li><Link href="#">Find a Store</Link></li>
-          <span className="h-[14px] w-px bg-gray-400" />
-          <li><Link href="#">Help</Link></li>
-          <span className="h-[14px] w-px bg-gray-400" />
-          <li><Link href="#">Join Us</Link></li>
-          <span className="h-[14px] w-px bg-gray-400" />
-          <li><Link href="#">Sign In</Link></li>
+        <nav className="hidden sm:flex items-center space-x-4 text-black text-sm sm:text-base md:text-lg font-medium">
+          <Link href="/findstore">Find a Store</Link>
+          <span className="hidden sm:inline-block h-[14px] w-[1px] bg-gray-400" />
+          <Link href="/help">Help</Link>
+          <span className="hidden sm:inline-block h-[14px] w-[1px] bg-gray-400" />
+          <Link href="/joinus">Join Us</Link>
+          <span className="hidden sm:inline-block h-[14px] w-[1px] bg-gray-400" />
+          <Link href="/login">Sign In</Link>
         </nav>
       </header>
 
-      {/* Main Navbar */}
+      {/* Main Navbar Section */}
       <header className="bg-white border-b shadow-sm">
-        <div className="flex justify-between items-center px-4 sm:px-8 py-2">
+        <div className="flex justify-between items-center px-4 sm:px-8 lg:px-12 py-2">
           {/* Logo */}
-          <Image src={"/nikelogo.png"} width={200} height={200} alt="Logo" className="w-[60px] sm:w-[80px] ml-8" />
+          <Image src={"/nikelogo.png"} width={150} height={150} alt="Logo" className="w-[50px] sm:w-[70px] md:w-[80px] ml-8" />
 
           {/* Navigation Links */}
           <nav className="hidden md:flex space-x-8 justify-center items-center font-medium">
-            <a href="#" className="text-black hover:underline">New & Featured</a>
-            <a href="#" className="text-black hover:underline">Men</a>
-            <a href="#" className="text-black hover:underline">Women</a>
-            <a href="#" className="text-black hover:underline">Kids</a>
-            <a href="#" className="text-black hover:underline">SNKRS</a>
+            <Link href="/overallproducts" className="text-black hover:underline text-sm md:text-base">New & Featured</Link>
+            <Link href="/overallproducts" className="text-black hover:underline text-sm md:text-base">Men</Link>
+            <Link href="/overallproducts" className="text-black hover:underline text-sm md:text-base">Women</Link>
+            <Link href="/overallproducts" className="text-black hover:underline text-sm md:text-base">Kids</Link>
+            <Link href="/overallproducts" className="text-black hover:underline text-sm md:text-base">SNKRS</Link>
           </nav>
 
           {/* Search and Icons */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 ml-4">
             <div className="flex items-center bg-slate-100 rounded-full px-2 py-1">
-              <CiSearch className="text-black" />
-              <input type="text" placeholder="Search" className="bg-transparent outline-none text-sm pl-2 py-1" />
+              <CiSearch className="text-black text-lg" />
+              <input type="text" placeholder="Search" className="bg-transparent outline-none text-sm sm:text-base pl-2 py-1" />
             </div>
 
             <FaRegHeart className="text-black text-lg" />
-            <BsBag className="w-6 h-6" />
+            <BsBag className="w-6 h-6 text-lg" />
           </div>
         </div>
       </header>

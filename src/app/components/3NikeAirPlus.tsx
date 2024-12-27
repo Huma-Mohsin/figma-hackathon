@@ -4,7 +4,7 @@ const NikeAirPlus = () => {
   return (
     <div className="w-full mt-[80px]">
       {/* Parent div with image */}
-      <div className="w-full h-[700px] sm:h-[500px] md:h-[600px]">
+      <div className="w-full max-w-[1200px] mx-auto h-[700px] sm:h-[500px] md:h-[600px]">
         <img
           src="/nikeAirPulse.png" 
           alt="Nike Air Max Pulse"
@@ -13,14 +13,14 @@ const NikeAirPlus = () => {
       </div>
 
       {/* Child div with text */}
-      <div className="w-full mx-auto flex flex-col justify-center items-center text-center py-20 sm:py-8">
-        <h1 className="text-[#111111] font-bold font-sans text-xl sm:text-2xl md:text-3xl">
+      <div className="w-full mx-auto flex flex-col justify-center items-center text-center py-12 sm:py-8 space-y-4 md:space-y-6">
+        <h1 className="text-[#111111] font-bold font-sans text-lg sm:text-xl md:text-2xl">
           First Look
         </h1>
-        <h2 className="text-[#111111] text-4xl sm:text-3xl md:text-2xl font-sans font-bold mt-2">
+        <h2 className="text-[#111111] text-3xl sm:text-2xl md:text-xl font-sans font-bold mt-2">
           NIKE AIR MAX PULSE
         </h2>
-        <p className="text-[#111111] text-xl sm:text-lg md:text-base font-sans mt-4 px-4">
+        <p className="text-[#111111] text-lg sm:text-base md:text-sm font-sans mt-4 px-4">
           Extreme comfort. Hyper durable. Max volume. Introducing the Air Max Pulse
           <br />
           — designed to push you past your limits and help you go to the max.
