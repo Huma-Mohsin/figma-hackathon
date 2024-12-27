@@ -10,10 +10,10 @@ const GearUp = () => {
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-left">Gear Up</h2>
           
           {/* Shop Men's and Women's with Arrows */}
-          <div className="flex justify-between mb-8 flex-wrap">
+          <div className="flex flex-wrap justify-between mb-8">
             {/* Shop Men's Section */}
-            <div className="flex items-center mb-4 sm:mb-0">
-              <h2 className="text-1xl font-bold text-gray-900 ml-4 sm:ml-12">Shop Men</h2>
+            <div className="flex items-center mb-4 sm:mb-0 w-full sm:w-auto">
+              <h2 className="text-xl font-bold text-gray-900 ml-4 sm:ml-0">Shop Men</h2>
               <button className="p-2 bg-gray-100 rounded-full flex items-center justify-center ml-2">
                 ←
               </button>
@@ -23,8 +23,8 @@ const GearUp = () => {
             </div>
             
             {/* Shop Women's Section */}
-            <div className="flex items-center mb-4 sm:mb-0">
-              <h2 className="text-1xl font-bold text-gray-900">Shop Women</h2>
+            <div className="flex items-center w-full sm:w-auto">
+              <h2 className="text-xl font-bold text-gray-900">Shop Women</h2>
               <button className="p-2 bg-gray-100 rounded-full flex items-center justify-center ml-2">
                 ←
               </button>

@@ -3,17 +3,16 @@ import Image from "next/image"; // Import the Image component from Next.js
 
 const StepIntoShoes = () => {
   return (
-    // New Section (from Uploaded Image)
     <div className="relative bg-white py-16 px-4 sm:py-20 lg:py-32">
       <div className="max-w-7xl mx-auto text-center">
-        {/* Image Section with extended left and right margins */}
-        <div className="relative w-full overflow-hidden">
+        {/* Image Section with centered layout */}
+        <div className="relative w-full">
           <Image
-            src="/featured.jpg" 
-            alt="ManShoes"
-            width={1600} // Wider width for a larger image
-            height={800} // Increased height for better proportions
-            className="w-full h-auto object-cover sm:w-[110%] md:w-[120%] lg:w-[130%] -mx-4 sm:-mx-6 md:-mx-8 lg:-mx-12"
+            src="/featured.jpg"
+            alt="Man Shoes"
+            width={1600} // Adjusted for better proportions
+            height={800}
+            className="w-full h-auto object-cover" // Ensure image covers properly
           />
         </div>
         

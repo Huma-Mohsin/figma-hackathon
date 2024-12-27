@@ -2,18 +2,18 @@ import React from 'react';
 
 const NikeAirPlus = () => {
   return (
-    <div className="w-full mt-[80px]">
+    <div className="w-full mt-10">
       {/* Parent div with image */}
-      <div className="w-full max-w-[1200px] mx-auto h-[700px] sm:h-[500px] md:h-[600px]">
+      <div className="w-full max-w-[1200px] mx-auto h-auto sm:h-[500px] md:h-[600px]">
         <img
           src="/nikeAirPulse.png" 
           alt="Nike Air Max Pulse"
-          className="w-full h-full object-contain"
+          className="w-full h-auto object-cover"
         />
       </div>
 
       {/* Child div with text */}
-      <div className="w-full mx-auto flex flex-col justify-center items-center text-center py-12 sm:py-8 space-y-4 md:space-y-6">
+      <div className="w-full mx-auto flex flex-col justify-center items-center text-center py-12 sm:py-8 space-y-6 md:space-y-8">
         <h1 className="text-[#111111] font-bold font-sans text-lg sm:text-xl md:text-2xl">
           First Look
         </h1>

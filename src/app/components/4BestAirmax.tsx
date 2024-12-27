@@ -5,7 +5,7 @@ const BestAirMax = () => {
   const items = [
     {
       image: "/Airmax1.png",
-      name: "Nike Air Max PulseNike Dri-FIT ADV TechKnit Ultra",
+      name: "Nike Air Max Pulse Nike Dri-FIT ADV TechKnit Ultra",
       title: "Women's Shoes",
       price: "₹ 13 995",
     },
@@ -24,7 +24,7 @@ const BestAirMax = () => {
   ];
 
   return (
-    <div className="w-full max-w-[1440px] mx-auto mt-[70px] px-8 sm:px-12">
+    <div className="w-full max-w-[1440px] mx-auto mt-[50px] px-8 sm:px-12">
       {/* Parent Title */}
       <h1 className="text-left font-bold text-3xl mb-8 font-sans">Best Of Air Max</h1>
 
@@ -36,11 +36,11 @@ const BestAirMax = () => {
             className="w-full h-auto bg-gray-100 rounded-lg shadow-lg flex flex-col mx-auto"
           >
             {/* Image Section */}
-            <div className="w-full h-[300px] sm:h-[350px] lg:h-[400px] overflow-hidden rounded-t-lg">
+            <div className="w-full h-auto overflow-hidden rounded-t-lg">
               <img
                 src={item.image}
                 alt={item.name}
-                className="w-full h-full object-cover"
+                className="w-full h-auto object-cover"
               />
             </div>
 
