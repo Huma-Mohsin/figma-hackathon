@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { CiSearch } from 'react-icons/ci';
 import { FaRegHeart, FaBars } from 'react-icons/fa';
+import { PiGiftLight } from "react-icons/pi";
 import { BsBag } from 'react-icons/bs';
 import { useState } from 'react';
 
@@ -14,7 +15,7 @@ const Navbar = () => {
       {/* Header Section */}
       <header className="bg-[#F5F5F5] border-b font-[Helvetica Neue] flex flex-col sm:flex-row justify-between items-center px-4 sm:px-8 md:px-10 lg:px-12 xl:px-16 py-4">
         {/* Logo Section */}
-        <Image src="/logo.png" alt="Logo" width={150} height={100} className="w-[40px] sm:w-[60px] lg:w-[80px] ml-4" />
+        <Image src="/logo.png" alt="Logo" width={50} height={50} className="w-[40px] sm:w-[60px] lg:w-[80px] ml-4" />
 
         {/* Hamburger Icon */}
         <div className="sm:hidden flex items-center space-x-4">
@@ -58,23 +59,26 @@ const Navbar = () => {
 
           {/* Navigation Links */}
           <nav
-            className="flex flex-col sm:flex-row space-y-4 mt-6 sm:space-y-0 sm:space-x-8 justify-center items-center font-medium"
+            className="flex flex-col sm:flex-row text-xl text-bold space-y-4 mt-6 sm:space-y-0 sm:space-x-8 justify-center items-center font-medium"
             aria-label="Secondary navigation"
           >
-            <Link href="/overallproducts" className="text-black hover:underline text-sm md:text-base">
+            <Link href="/news" className="text-black hover:underline text-sm md:text-base">
               New & Featured
             </Link>
-            <Link href="/overallproducts" className="text-black hover:underline text-sm md:text-base">
+            <Link href="/men" className="text-black hover:underline text-sm md:text-base">
               Men
             </Link>
-            <Link href="/overallproducts" className="text-black hover:underline text-sm md:text-base">
+            <Link href="/women" className="text-black hover:underline text-sm md:text-base">
               Women
             </Link>
-            <Link href="/overallproducts" className="text-black hover:underline text-sm md:text-base">
+            <Link href="/kids" className="text-black hover:underline text-sm md:text-base">
               Kids
             </Link>
-            <Link href="/overallproducts" className="text-black hover:underline text-sm md:text-base">
+            <Link href="/externaldatabyapi" className="text-black hover:underline text-sm md:text-base">
               SNKRS
+            </Link>
+            <Link href="/overallproducts" className="text-black hover:underline text-sm md:text-base">
+              All Products
             </Link>
           </nav>
 
@@ -91,8 +95,14 @@ const Navbar = () => {
             </div>
 
             <div className="flex space-x-4 mt-2 sm:space-x-2">
+            <Link href="/gifts">
+              <PiGiftLight className="text-black text-lg cursor-pointer" aria-label="GiftVouchers" />
+            </Link>
+
               <FaRegHeart className="text-black text-lg" aria-label="Favorites" />
-              <BsBag className="w-6 h-6 text-lg" aria-label="Shopping cart" />
+              <Link href="/cart">
+              <BsBag className="w-4 h-4 text-lg" aria-label="Shopping cart"  /></Link>
+
             </div>
           </div>
         </div>
