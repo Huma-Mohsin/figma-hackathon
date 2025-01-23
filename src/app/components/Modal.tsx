@@ -23,6 +23,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, description, imag
           ×
         </button>
         <h2 className="text-2xl sm:text-3xl font-semibold mb-4">{title}</h2>
+        {/* Display the description */}
+        <p className="text-gray-500 text-sm sm:text-base mb-4">{description}</p>
         <img src={imageUrl} alt={title} className="w-full h-auto sm:h-64 object-cover rounded-lg mb-4" />
         <p className="text-gray-700 text-sm sm:text-base mb-4">{paragraph}</p>
       </div>

@@ -3,8 +3,20 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+// Define the type for each product item
+interface Product {
+  productName: string;
+  image: string;
+  category: string;
+  price: number;
+  inventory: number;
+  status: string;
+  colors: string[];
+}
+
 const FetchData = () => {
-  const [data, setData] = useState<any[]>([]);
+  // Use the specific Product type for the data state
+  const [data, setData] = useState<Product[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -17,9 +29,13 @@ const FetchData = () => {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const jsonData = await response.json();
-        setData(jsonData.data);
-      } catch (err: any) {
-        setError(err.message);
+        setData(jsonData.data);  // Assuming jsonData.data contains the array of products
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("An unknown error occurred.");
+        }
       }
     };
 
