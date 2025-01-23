@@ -1,11 +1,11 @@
 "use client"
 import Image from 'next/image';
 import Link from 'next/link';
-import { CiSearch } from 'react-icons/ci';
 import { FaRegHeart, FaBars } from 'react-icons/fa';
 import { PiGiftLight } from "react-icons/pi";
 import { BsBag } from 'react-icons/bs';
 import { useState } from 'react';
+import SearchBar from './Searchbar';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -84,24 +84,16 @@ const Navbar = () => {
 
           {/* Search and Icons */}
           <div className="flex flex-col sm:flex-row items-center mt-4 space-x-4 ml-4">
-            <div className="flex items-center bg-slate-100 rounded-full px-2 py-1 w-full md:w-64">
-              <CiSearch className="text-black text-lg" />
-              <input
-                type="text"
-                placeholder="Search"
-                className="bg-transparent outline-none text-sm sm:text-base pl-2 py-1 w-full"
-                aria-label="Search input"
-              />
-            </div>
+          <SearchBar/>
 
-            <div className="flex space-x-4 mt-2 sm:space-x-2">
+            <div className="flex space-x-4  sm:space-x-2">
             <Link href="/gifts">
-              <PiGiftLight className="text-black text-lg cursor-pointer" aria-label="GiftVouchers" />
+              <PiGiftLight className="text-black text-xl cursor-pointer mb-10" aria-label="GiftVouchers" />
             </Link>
 
-              <FaRegHeart className="text-black text-lg" aria-label="Favorites" />
+              <FaRegHeart className="text-black text-xl" aria-label="Favorites" />
               <Link href="/cart">
-              <BsBag className="w-4 h-4 text-lg" aria-label="Shopping cart"  /></Link>
+              <BsBag className="w-4 h-4 text-xl" aria-label="Shopping cart"  /></Link>
 
             </div>
           </div>
