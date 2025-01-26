@@ -1,3 +1,4 @@
+// 
 export const productSchema = {
   name: 'product',
   title: 'Product',
@@ -7,6 +8,15 @@ export const productSchema = {
       name: 'productName',
       title: 'Product Name',
       type: 'string',
+    },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'productName', // Automatically generate the slug from the product name
+        maxLength: 96, // Limit the length of the slug
+      },
     },
     {
       name: 'category',
@@ -37,7 +47,7 @@ export const productSchema = {
     {
       name: 'image',
       title: 'Image',
-      type: 'image',
+      type: 'image', // Using Sanity's image type for image field
       options: {
         hotspot: true,
       },
@@ -46,15 +56,6 @@ export const productSchema = {
       name: 'description',
       title: 'Description',
       type: 'text',
-    },
-    {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'productName',
-        maxLength: 96,
-      },
     },
   ],
 };

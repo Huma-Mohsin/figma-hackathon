@@ -74,7 +74,7 @@ const Navbar = () => {
             <Link href="/kids" className="text-black hover:underline text-sm md:text-base">
               Kids
             </Link>
-            <Link href="/externaldatabyapi" className="text-black hover:underline text-sm md:text-base">
+            <Link href="/products" className="text-black hover:underline text-sm md:text-base">
               SNKRS
             </Link>
             <Link href="/overallproducts" className="text-black hover:underline text-sm md:text-base">
