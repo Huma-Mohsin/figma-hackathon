@@ -27,37 +27,37 @@ const Page = () => {
             <Link href="/shoes">Shoes</Link>
           </li>
           <li className="leading-8">
-            <Link href="#">Sports Bras</Link>
+            <Link href="/sports">Sports Bras</Link>
           </li>
           <li className="leading-8">
-            <Link href="#">Tops & T-Shirts</Link>
+            <Link href="/tops">Tops & T-Shirts</Link>
           </li>
           <li className="leading-8">
-            <Link href="#">Hoodies & Sweatshirts</Link>
+            <Link href="/hoodies">Hoodies & Sweatshirts</Link>
           </li>
           <li className="leading-8">
-            <Link href="#">Jackets</Link>
+            <Link href="/jackets">Jackets</Link>
           </li>
           <li className="leading-8">
-            <Link href="#">Trousers & Tights</Link>
+            <Link href="/trousers">Trousers & Tights</Link>
           </li>
           <li className="leading-8">
-            <Link href="#">Shorts</Link>
+            <Link href="/shorts">Shorts</Link>
           </li>
           <li className="leading-8">
-            <Link href="#">Tracksuits</Link>
+            <Link href="/tracksuit">Tracksuits</Link>
           </li>
           <li className="leading-8">
-            <Link href="#">Jumpsuits & Rompers</Link>
+            <Link href="/jumpsuit">Jumpsuits & Rompers</Link>
           </li>
           <li className="leading-8">
-            <Link href="#">Skirts & Dresses</Link>
+            <Link href="/skirts">Skirts & Dresses</Link>
           </li>
           <li className="leading-8">
-            <Link href="#">Socks</Link>
+            <Link href="/socks">Socks</Link>
           </li>
           <li className="leading-8">
-            <Link href="#">Accessories & Equipment</Link>
+            <Link href="/accessories">Accessories & Equipment</Link>
           </li>
         </ul>
         <div className="my-10 border-t-2 pt-4">

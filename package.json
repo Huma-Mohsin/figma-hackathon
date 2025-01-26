@@ -7,10 +7,10 @@
     "build": "cross-env NEXT_SKIP_ESLINT=true next build",
     "start": "next start",
     "lint": "next lint",
-      "import-data": "node scripts/importSanityData.mjs"
+    "import-data": "node scripts/importSanityData.mjs"
   },
   "dependencies": {
-    "@sanity/client": "^6.25.0",
+    "@sanity/client": "^6.27.1",
     "@sanity/image-url": "^1.1.0",
     "@sanity/vision": "^3.71.0",
     "axios": "^1.7.9",

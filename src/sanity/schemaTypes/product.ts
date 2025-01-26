@@ -37,7 +37,7 @@ export const productSchema = {
     {
       name: 'image',
       title: 'Image',
-      type: 'image', // Using Sanity's image type for image field
+      type: 'image',
       options: {
         hotspot: true,
       },
@@ -47,5 +47,14 @@ export const productSchema = {
       title: 'Description',
       type: 'text',
     },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'productName',
+        maxLength: 96,
+      },
+    },
   ],
-}
+};
