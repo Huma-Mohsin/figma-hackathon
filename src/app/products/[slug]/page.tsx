@@ -1,11 +1,15 @@
+"use client";
 import { client } from "@/sanity/lib/client";
 import { Product } from "../../../../types/products";
 import { groq } from "next-sanity";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
+import { useState } from "react";
+import { addToCart } from "../../../../cart-actions/actions"; // Assuming addToCart is exported here
+import Swal from "sweetalert2";
 
 interface ProductPageProps {
-  params: { slug: string }; // Define the structure of params
+  params: { slug: string };
 }
 
 // Function to fetch a single product by slug
@@ -26,16 +30,16 @@ async function GetProduct(slug: string): Promise<Product | null> {
       }`,
       { slug }
     );
-    return product || null; // Return null if no product is found
+    return product || null;
   } catch (error) {
     console.error("Error fetching product:", error);
-    return null; // Return null in case of an error
+    return null;
   }
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
-  const { slug } = params; // Destructure slug from params
-  const product = await GetProduct(slug); // Fetch the product data
+  const { slug } = params;
+  const product = await GetProduct(slug);
 
   // Handle the case where the product is not found
   if (!product) {
@@ -46,6 +50,20 @@ export default async function ProductPage({ params }: ProductPageProps) {
       </div>
     );
   }
+
+  // Handle Add to Cart
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault();
+    Swal.fire({
+      position: "top-right",
+      icon: "success",
+      title: `${product.productName} added to cart`,
+      showConfirmButton: false,
+      timer: 1000,
+    });
+
+    addToCart(product); // Add the product to cart
+  };
 
   return (
     <div className="max-w-6xl mx-auto py-10 px-4">
@@ -58,7 +76,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
               alt={product.productName}
               height={500}
               width={500}
-             
               className="max-w-full h-auto object-contain rounded-lg shadow-lg"
             />
           ) : (
@@ -68,18 +85,17 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
         {/* Right Side: Product Details */}
         <div className="w-full md:w-1/2 pl-8 space-y-6">
-
           {/* Product Name */}
           <h1 className="text-4xl font-semibold text-gray-900">{product.productName}</h1>
 
           {/* Category */}
           <p className="text-xl text-gray-800 font-semibold">Category: <span className=" text-blue-500">{product.category}</span></p>
 
-         
           {/* Product Description */}
           <p className="text-xl text-gray-600">{product.description}</p>
- {/* Available Colors */}
- {product.colors?.length > 0 ? (
+
+          {/* Available Colors */}
+          {product.colors?.length > 0 ? (
             <div>
               <p className="text-lg font-semibold">Available Colors:</p>
               <ul className="list-disc pl-5">
@@ -99,7 +115,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <p className="text-3xl text-green-600 font-semibold">Price: ${product.price}</p>
 
           {/* Add to Cart Button */}
-          <button className="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-200">
+          <button
+            className="bg-gradient-to-r from-gray-500 to-gray-700 shadow-md text-white py-2 px-6 rounded-xl hover:bg-gray-700 transition duration-200 mt-2 ml-20"
+            onClick={handleAddToCart}
+          >
             Add to Cart
           </button>
         </div>

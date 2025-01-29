@@ -87,7 +87,7 @@ const CombinedPage = () => {
               className="bg-white p-4 border rounded-xl shadow-xl"
             >
               <h3 className="text-2xl font-semibold">{news.title}</h3>
-              <p className="text-xl">{news.description}</p>
+              <p className="text-lg">{news.description}</p>
               <Link
                 href={news.link}
                 className="text-red-400 hover:text-red-500 text-lg"
@@ -111,9 +111,9 @@ const CombinedPage = () => {
         <div className="flex justify-between items-center mb-8">
           <button
             onClick={handlePrevNewsPage}
-            className="px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 disabled:opacity-50"
-            disabled={currentNewsPage === 1}
-          >
+           className="bg-gradient-to-r from-green-400 to-green-700 shadow-md  text-white py-2 px-6 rounded-xl hover:bg-gray-700 transition duration-200 mt-2 ml-20"
+            disabled={currentNewsPage === 1}>
+          
             Previous
           </button>
           <div>
@@ -121,7 +121,7 @@ const CombinedPage = () => {
           </div>
           <button
             onClick={handleNextNewsPage}
-            className="px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 disabled:opacity-50"
+             className="bg-gradient-to-r from-green-400 to-green-700 shadow-md  text-white py-2 px-6 rounded-xl hover:bg-gray-700 transition duration-200 mt-2 ml-20"
             disabled={currentNewsPage === totalNewsPages}
           >
             Next
@@ -146,9 +146,9 @@ const CombinedPage = () => {
                 className="w-full h-64 object-contain mb-4 rounded-xl"
               />
               <h3 className="text-2xl font-semibold">{product.name}</h3>
-              <p className="text-xl">{product.description}</p>
+              <p className="text-lg">{product.description}</p>
               <p className="text-xl font-bold text-blue-500">{product.price}</p>
-              <button className="mt-4 px-4 py-2 bg-green-500 text-white rounded-xl">
+              <button className="bg-gradient-to-r from-gray-400 to-gray-700 shadow-md  text-white py-2 px-6 rounded-xl hover:bg-gray-700 transition duration-200 mt-2 ml-20">
                 Add to Cart
               </button>
             </div>
@@ -159,7 +159,7 @@ const CombinedPage = () => {
         <div className="flex justify-between items-center mb-8">
           <button
             onClick={handlePrevFeaturedPage}
-            className="px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 disabled:opacity-50"
+            className="bg-gradient-to-r from-green-400 to-green-700 shadow-md  text-white py-2 px-6 rounded-xl hover:bg-gray-700 transition duration-200 mt-2 ml-20"
             disabled={currentFeaturedPage === 1}
           >
             Previous
@@ -169,7 +169,7 @@ const CombinedPage = () => {
           </div>
           <button
             onClick={handleNextFeaturedPage}
-            className="px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 disabled:opacity-50"
+          className="bg-gradient-to-r from-green-400 to-green-700 shadow-md  text-white py-2 px-6 rounded-xl hover:bg-gray-700 transition duration-200 mt-2 ml-20"
             disabled={currentFeaturedPage === totalFeaturedPages}
           >
             Next

@@ -1,5 +1,5 @@
 import React from 'react';
-import { nikeProducts } from '../components/card/data';
+import { nikeProducts } from './card/data';
 import Image from 'next/image';
 
 const ProductList = () => {

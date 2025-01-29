@@ -29,7 +29,7 @@ const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
         <h3 className='text-blue-500 font-bold text-xl'>{product.price}</h3>
         <div className='flex mt-6'>
           <Link href='/cart'>
-           <button className="flex items-center mt-1 px-6 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition">
+          <button className="bg-gradient-to-r from-gray-500 to-gray-700 shadow-md  text-white py-2 px-6 rounded-xl hover:bg-gray-700 transition duration-200 mt-2 ml-20">
                         <BsCart className="text-lg mr-2" />
                         Add to Cart
                       </button>

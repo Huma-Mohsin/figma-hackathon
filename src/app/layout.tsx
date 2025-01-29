@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -25,6 +26,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+ 
   return (
     <html lang="en">
       <head>
@@ -44,9 +47,17 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Navbar />
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+      {/* Passing the handleSearch function to Navbar as onSearch */}
+      <Navbar />
+        
+        
+        {/* Children content */}
         {children}
+        
+        {/* Footer */}
         <StaticFooter />
       </body>
     </html>

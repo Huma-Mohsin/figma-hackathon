@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { FiFilter, FiChevronDown, FiChevronUp } from 'react-icons/fi';
-import ProductList from '../components/productlist';
+import ProductList from '../components/StaticDataproductlist';
 import Link from 'next/link';
 
 const Page = () => {

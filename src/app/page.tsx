@@ -13,11 +13,11 @@ import NikeAirPlus from "./components/3NikeAirPlus";
 import StepIntoShoes from "./components/5StepInToShoes";
 
 
+
 export default function Home() {
   return (
     <div>
-      
-    
+ 
     <HelloNikeText/>
     <NikeAirPlus/>
     <BestAirMax/>
@@ -27,6 +27,7 @@ export default function Home() {
     <Essentials/>
     <Footer/>
 
+ 
     
       
     </div>
