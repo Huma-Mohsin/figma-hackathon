@@ -6,10 +6,7 @@ import Navbar from "./components/1Navbar";
 import StaticFooter from "./components/10StaticFooter";
 import {
   ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton
+  
 } from '@clerk/nextjs';
 
 
@@ -64,12 +61,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SignedOut>
-              <SignInButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
+        
       {/* Passing the handleSearch function to Navbar as onSearch */}
       <Navbar />
         

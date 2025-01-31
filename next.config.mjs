@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig =  {
+const nextConfig = {
   images: {
-      domains: ['template-03-api.vercel.app',"cdn.sanity.io"], // Add the domain of the external image
-    },
+    domains: ["template-03-api.vercel.app", "cdn.sanity.io"], // Allow external images
+  },
+  experimental: {
+    middlewarePrefetch: "strict", // Ensures middleware runs correctly
+  },
 };
 
 export default nextConfig;
