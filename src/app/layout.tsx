@@ -4,6 +4,14 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./components/1Navbar";
 import StaticFooter from "./components/10StaticFooter";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs';
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,8 +37,14 @@ export default function RootLayout({
 
  
   return (
+<ClerkProvider>
+        
+          
+        
+         
+     
     <html lang="en">
-      <head>
+    <head>
         {/* Preload custom fonts */}
         <link
           rel="preload"
@@ -50,6 +64,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <SignedOut>
+              <SignInButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
       {/* Passing the handleSearch function to Navbar as onSearch */}
       <Navbar />
         
@@ -61,5 +81,7 @@ export default function RootLayout({
         <StaticFooter />
       </body>
     </html>
+    </ClerkProvider>
+
   );
 }

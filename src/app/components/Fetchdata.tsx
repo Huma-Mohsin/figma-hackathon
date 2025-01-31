@@ -1,37 +1,36 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { client } from "@/sanity/lib/client";
 
 type SelectedFilters = {
-  gender: string[];
-  price: string[];
-};
+  gender: string[]
+  price: string[]
+}
 
 type FetchDataProps = {
-  filters: SelectedFilters;
-};
+  filters: SelectedFilters
+}
 
 type Product = {
-  _id: string;
-  productName: string;
-  category: string;
-  price: number;
-  inventory: number;
-  colors: string[];
-  status: string;
-  imageUrl: string;
-  description: string;
-  slug: string;
-};
+  _id: string
+  productName: string
+  category: string
+  price: number
+  inventory: number
+  colors: string[]
+  status: string
+  imageUrl: string
+  description: string
+  slug: string
+}
 
 const FetchData: React.FC<FetchDataProps> = ({ filters }) => {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [products, setProducts] = useState<Product[]>([])
+  const [loading, setLoading] = useState<boolean>(true)
 
   useEffect(() => {
     const fetchProducts = async () => {
-      setLoading(true);
+      setLoading(true)
       
-      // Build GROQ query dynamically based on filters
       const query = `
         *[_type == "product" ${
           filters.gender.length > 0
@@ -53,34 +52,33 @@ const FetchData: React.FC<FetchDataProps> = ({ filters }) => {
           description,
           "slug": slug.current
         }
-      `;
+      `
 
-      // Handle filters for gender and price range
-      const params: Record<string, any> = {
+      const params: Record<string, unknown> = {
         genderFilters: filters.gender,
         minPrice: filters.price.length > 0 ? parseInt(filters.price[0]) : 0,
-        maxPrice: filters.price.length > 1 ? parseInt(filters.price[1]) : Infinity,
-      };
+        maxPrice: filters.price.length > 1 ? parseInt(filters.price[1]) : Infinity
+      }
 
       try {
-        const data = await client.fetch(query, params);
-        setProducts(data);
+        const data = await client.fetch(query, params)
+        setProducts(data)
       } catch (error) {
-        console.error("Error fetching products:", error);
+        console.error("Error fetching products:", error)
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
-    };
+    }
 
-    fetchProducts();
-  }, [filters]);
+    fetchProducts()
+  }, [filters])
 
   if (loading) {
-    return <p>Loading products...</p>;
+    return <p>Loading products...</p>
   }
 
   if (products.length === 0) {
-    return <p>No products found for the selected filters.</p>;
+    return <p>No products found for the selected filters.</p>
   }
 
   return (
@@ -113,7 +111,7 @@ const FetchData: React.FC<FetchDataProps> = ({ filters }) => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FetchData;
+export default FetchData
