@@ -1,10 +1,10 @@
 "use client";
+import { useState, useEffect } from "react";
 import { client } from "@/sanity/lib/client";
 import { Product } from "../../../../types/products";
 import { groq } from "next-sanity";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
-import { useState } from "react";
 import { addToCart } from "../../../../cart-actions/actions"; // Assuming addToCart is exported here
 import Swal from "sweetalert2";
 
@@ -12,36 +12,49 @@ interface ProductPageProps {
   params: { slug: string };
 }
 
-// Function to fetch a single product by slug
-async function GetProduct(slug: string): Promise<Product | null> {
-  try {
-    const product = await client.fetch(
-      groq`*[_type == "product" && slug.current == $slug][0]{
-        _id,
-        productName,
-        _type,
-        category,
-        price,
-        inventory,
-        colors,
-        status,
-        image,
-        description
-      }`,
-      { slug }
-    );
-    return product || null;
-  } catch (error) {
-    console.error("Error fetching product:", error);
-    return null;
-  }
-}
-
-export default async function ProductPage({ params }: ProductPageProps) {
+export default function ProductPage({ params }: ProductPageProps) {
   const { slug } = params;
-  const product = await GetProduct(slug);
+
+  // State to store product data and loading state
+  const [product, setProduct] = useState<Product | null>(null);
+  const [loading, setLoading] = useState<boolean>(true); // Track loading state
+
+  // Fetch product data inside useEffect
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const fetchedProduct = await client.fetch(
+          groq`*[_type == "product" && slug.current == $slug][0]{
+            _id,
+            productName,
+            _type,
+            category,
+            price,
+            inventory,
+            colors,
+            status,
+            image,
+            description
+          }`,
+          { slug }
+        );
+        setProduct(fetchedProduct || null);
+      } catch (error) {
+        console.error("Error fetching product:", error);
+        setProduct(null); // Handle error by setting product to null
+      } finally {
+        setLoading(false); // Set loading to false once data is fetched
+      }
+    };
+
+    fetchProduct(); // Call the fetch function
+  }, [slug]); // Dependency array to trigger fetch when slug changes
 
   // Handle the case where the product is not found
+  if (loading) {
+    return <div>Loading...</div>; // Show loading state until data is fetched
+  }
+
   if (!product) {
     return (
       <div>
@@ -89,7 +102,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <h1 className="text-4xl font-semibold text-gray-900">{product.productName}</h1>
 
           {/* Category */}
-          <p className="text-xl text-gray-800 font-semibold">Category: <span className=" text-blue-500">{product.category}</span></p>
+          <p className="text-xl text-gray-800 font-semibold">
+            Category: <span className=" text-blue-500">{product.category}</span>
+          </p>
 
           {/* Product Description */}
           <p className="text-xl text-gray-600">{product.description}</p>
@@ -109,7 +124,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
           )}
 
           {/* Inventory */}
-          <p className="text-xl font-bold text-orange-600">Inventory: <span className="font-semibold">{product.inventory}</span></p>
+          <p className="text-xl font-bold text-orange-600">
+            Inventory: <span className="font-semibold">{product.inventory}</span>
+          </p>
 
           {/* Price */}
           <p className="text-3xl text-green-600 font-semibold">Price: ${product.price}</p>

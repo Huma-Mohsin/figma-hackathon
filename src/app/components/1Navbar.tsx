@@ -16,11 +16,11 @@ const Navbar = () => {
     setWishlistCount(storedWishlist ? JSON.parse(storedWishlist).length : 0);
   }, []);
 
-  // Update wishlist count
-  const updateWishlistCount = () => {
-    const storedWishlist = localStorage.getItem("wishlist");
-    setWishlistCount(storedWishlist ? JSON.parse(storedWishlist).length : 0);
-  };
+  // // Update wishlist count
+  // const updateWishlistCount = () => {
+  //   const storedWishlist = localStorage.getItem("wishlist");
+  //   setWishlistCount(storedWishlist ? JSON.parse(storedWishlist).length : 0);
+  // };
 
   return (
     <div>
