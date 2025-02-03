@@ -55,27 +55,27 @@ export default function ProductsPage() {
   };
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold text-center mb-8">All Products</h1>
-      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="container mx-auto px-4 py-6">
+      <h1 className="text-3xl sm:text-4xl font-bold text-center mb-8">All Products</h1>
+      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {products.map((product) => (
           <div
             key={product._id}
-            className="border p-6 rounded-lg shadow-lg bg-white flex flex-col h-[650px] w-[350px]"
+            className="border p-4 sm:p-6 rounded-lg shadow-lg bg-white flex flex-col h-full w-full"
           >
             {product.imageUrl && (
               <img
                 src={product.imageUrl}
                 alt={product.productName}
-                className="w-full h-[300px] object-cover rounded-t-lg mb-4 shadow-md"
+                className="w-full h-[250px] sm:h-[300px] object-cover rounded-t-lg mb-4 shadow-md"
               />
             )}
             <div className="px-4 flex flex-col flex-grow">
-              <h2 className="text-2xl font-semibold mb-2">{product.productName}</h2>
-              <p className="text-xl text-gray-600 mb-2">Category: {product.category}</p>
-              <p className="text-xl text-blue-600 mb-2">Price: ${product.price}</p>
-              <p className="text-xl text-red-600 mb-2">Inventory: {product.inventory}</p>
-              <p className="text-xl text-green-600 mb-4">Status: {product.status}</p>
+              <h2 className="text-xl sm:text-2xl font-semibold mb-2">{product.productName}</h2>
+              <p className="text-sm sm:text-lg text-gray-600 mb-2">Category: {product.category}</p>
+              <p className="text-sm sm:text-lg text-blue-600 mb-2">Price: ${product.price}</p>
+              <p className="text-sm sm:text-lg text-red-600 mb-2">Inventory: {product.inventory}</p>
+              <p className="text-sm sm:text-lg text-green-600 mb-4">Status: {product.status}</p>
 
               {/* Add to Cart Button */}
               <button

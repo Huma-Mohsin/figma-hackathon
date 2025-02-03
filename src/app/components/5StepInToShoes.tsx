@@ -23,7 +23,7 @@ const StepIntoShoes = () => {
         <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
           Cause everyone should know the feeling of running in that perfect pair!
         </p>
-        <button className="mt-6 px-6 py-3 bg-black text-white font-medium rounded-full hover:bg-gray-800 transition">
+        <button className="mt-6 px-6 py-3 bg-black text-white font-medium rounded-full hover:bg-gray-800 transition-all duration-300">
           Find Your Shoe
         </button>
       </div>

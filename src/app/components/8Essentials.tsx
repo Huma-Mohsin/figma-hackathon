@@ -18,17 +18,14 @@ const Essentials = () => {
       </div>
 
       {/* Grid Section */}
-      <div className="mt-12 flex flex-wrap justify-center gap-6">
+      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
         {/* Image Card 1 */}
-        <div className="relative w-[440px] sm:w-[300px] h-[300px] overflow-hidden rounded-lg shadow-md">
+        <div className="relative w-full h-[300px] overflow-hidden rounded-lg shadow-md">
           <Image
-            src="/e1.png" 
+            src="/e1.png"
             alt="Men's Product"
-         
             width={500}
             height={500}
-
-           
             className="rounded-lg object-cover"
           />
           <button className="absolute bottom-4 left-4 px-4 py-2 bg-gray-400 text-black font-medium text-sm rounded-full hover:bg-gray-800 hover:text-white transition">
@@ -37,14 +34,12 @@ const Essentials = () => {
         </div>
 
         {/* Image Card 2 */}
-        <div className="relative w-[440px] sm:w-[300px] h-[300px] overflow-hidden rounded-lg shadow-md">
+        <div className="relative w-full h-[300px] overflow-hidden rounded-lg shadow-md">
           <Image
-            src="/e2.png" 
+            src="/e2.png"
             alt="Women's Product"
-         
             width={500}
             height={500}
-           
             className="rounded-lg object-cover"
           />
           <button className="absolute bottom-4 left-4 px-4 py-2 bg-gray-400 text-black font-medium text-sm rounded-full hover:bg-gray-800 hover:text-white transition">
@@ -53,14 +48,12 @@ const Essentials = () => {
         </div>
 
         {/* Image Card 3 */}
-        <div className="relative w-[440px] sm:w-[300px] h-[300px] overflow-hidden rounded-lg shadow-md">
+        <div className="relative w-full h-[300px] overflow-hidden rounded-lg shadow-md">
           <Image
-            src="/e3.png" 
+            src="/e3.png"
             alt="Kid's Product"
             width={500}
             height={500}
-         
-           
             className="rounded-lg object-cover"
           />
           <button className="absolute bottom-4 left-4 px-4 py-2 bg-gray-400 text-black font-medium text-sm rounded-full hover:bg-gray-800 hover:text-white transition">

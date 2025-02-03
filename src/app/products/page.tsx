@@ -123,7 +123,7 @@ const DataFetchByAPI = () => {
               <div className="flex flex-wrap justify-between mt-4 space-x-2">
                 {/* Add to Cart Button */}
                 <button
-                  className="bg-gradient-to-r from-gray-500 to-gray-700 shadow-md text-white py-2 px-6 rounded-xl hover:bg-gray-700 transition duration-200"
+                  className="bg-gradient-to-r from-gray-500 to-gray-700 shadow-md ml-2 text-white py-2 px-6 rounded-xl hover:bg-gray-700 transition duration-200"
                   onClick={(e) => handleAddToCart(e, product)}
                 >
                   Add to Cart
@@ -131,7 +131,7 @@ const DataFetchByAPI = () => {
 
                 {/* Wishlist Button */}
                 <button
-                  className="bg-gradient-to-r from-red-500 to-red-700 shadow-md text-white py-2 px-6 rounded-xl hover:bg-pink-700 transition duration-200"
+                  className="bg-gradient-to-r from-red-500 to-red-700 shadow-md text-white mt-4 ml-0 py-2 px-6 rounded-xl hover:bg-pink-700 transition duration-200"
                   onClick={() => handleWishlist(product)}
                 >
                   {wishlist.some((item) => item._id === product._id)
