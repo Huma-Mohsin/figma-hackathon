@@ -1,9 +1,8 @@
-'use client';
-import React, { useState } from 'react';
-import { FiFilter, FiChevronDown, FiChevronUp } from 'react-icons/fi';
-
-import Link from 'next/link';
-import WomenClothing from '../components/categories/women';
+"use client";
+import React, { useState } from "react";
+import { FiFilter, FiChevronDown, FiChevronUp } from "react-icons/fi";
+import Link from "next/link";
+import WomenClothing from "../components/categories/women";
 
 const Page = () => {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
@@ -11,8 +10,8 @@ const Page = () => {
   return (
     <div className="grid grid-cols-12 px-4 md:px-10 py-20 relative">
       <div
-        className={`col-span-3 pr-4 md:pr-20 bg-white z-10 transform ${
-          isSidebarVisible ? 'translate-x-0' : '-translate-x-full'
+        className={`col-span-12 sm:col-span-3 lg:col-span-3 pr-4 md:pr-20 bg-white z-10 transform ${
+          isSidebarVisible ? "translate-x-0" : "-translate-x-full"
         } lg:translate-x-0 lg:static p-10 lg:p-0 w-full lg:w-60 fixed top-0 left-0 h-full overflow-y-auto transition-transform duration-300`}
       >
         <button

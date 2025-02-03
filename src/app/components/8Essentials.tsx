@@ -24,9 +24,12 @@ const Essentials = () => {
           <Image
             src="/e1.png" 
             alt="Men's Product"
-            layout="fill"
-            objectFit="cover"
-            className="rounded-lg"
+         
+            width={500}
+            height={500}
+
+           
+            className="rounded-lg object-cover"
           />
           <button className="absolute bottom-4 left-4 px-4 py-2 bg-gray-400 text-black font-medium text-sm rounded-full hover:bg-gray-800 hover:text-white transition">
             Men's
@@ -38,9 +41,11 @@ const Essentials = () => {
           <Image
             src="/e2.png" 
             alt="Women's Product"
-            layout="fill"
-            objectFit="cover"
-            className="rounded-lg"
+         
+            width={500}
+            height={500}
+           
+            className="rounded-lg object-cover"
           />
           <button className="absolute bottom-4 left-4 px-4 py-2 bg-gray-400 text-black font-medium text-sm rounded-full hover:bg-gray-800 hover:text-white transition">
             Women's
@@ -52,9 +57,11 @@ const Essentials = () => {
           <Image
             src="/e3.png" 
             alt="Kid's Product"
-            layout="fill"
-            objectFit="cover"
-            className="rounded-lg"
+            width={500}
+            height={500}
+         
+           
+            className="rounded-lg object-cover"
           />
           <button className="absolute bottom-4 left-4 px-4 py-2 bg-gray-400 text-black font-medium text-sm rounded-full hover:bg-gray-800 hover:text-white transition">
             Kid's

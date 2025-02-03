@@ -80,17 +80,17 @@ const CombinedPage = () => {
       {/* News Section */}
       <section>
         <h2 className="text-3xl font-semibold mb-6 mt-4">Nike News</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-6 mb-8">
           {currentNewsItems.map((news, index) => (
             <div
               key={index}
-              className="bg-white p-4 border rounded-xl shadow-xl"
+              className="bg-white p-4 border rounded-xl shadow-xl flex flex-col"
             >
               <h3 className="text-2xl font-semibold">{news.title}</h3>
               <p className="text-lg">{news.description}</p>
               <Link
                 href={news.link}
-                className="text-red-400 hover:text-red-500 text-lg"
+                className="text-red-400 hover:text-red-500 text-lg mt-4"
                 onClick={(e) => {
                   e.preventDefault(); // Prevent default link behavior
                   openModal(
@@ -111,17 +111,17 @@ const CombinedPage = () => {
         <div className="flex justify-between items-center mb-8">
           <button
             onClick={handlePrevNewsPage}
-           className="bg-gradient-to-r from-green-400 to-green-700 shadow-md  text-white py-2 px-6 rounded-xl hover:bg-gray-700 transition duration-200 mt-2 ml-20"
-            disabled={currentNewsPage === 1}>
-          
+            className="bg-gradient-to-r from-green-400 to-green-700 shadow-md text-white py-2 px-6 rounded-xl hover:bg-gray-700 transition duration-200 mt-2"
+            disabled={currentNewsPage === 1}
+          >
             Previous
           </button>
-          <div>
+          <div className="hidden md:block">
             Page {currentNewsPage} of {totalNewsPages}
           </div>
           <button
             onClick={handleNextNewsPage}
-             className="bg-gradient-to-r from-green-400 to-green-700 shadow-md  text-white py-2 px-6 rounded-xl hover:bg-gray-700 transition duration-200 mt-2 ml-20"
+            className="bg-gradient-to-r from-green-400 to-green-700 shadow-md text-white py-2 px-6 rounded-xl hover:bg-gray-700 transition duration-200 mt-2"
             disabled={currentNewsPage === totalNewsPages}
           >
             Next
@@ -132,11 +132,11 @@ const CombinedPage = () => {
       {/* Featured Products Section */}
       <section>
         <h2 className="text-3xl font-semibold mb-6 mt-4">Featured Nike Products</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
           {currentFeaturedItems.map((product, index) => (
             <div
               key={index}
-              className="bg-white p-4 border rounded-xl shadow-xl transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              className="bg-white p-4 border rounded-xl shadow-xl transform transition-all duration-300 hover:scale-105 hover:shadow-xl flex flex-col"
             >
               <Image
                 width={500}
@@ -148,7 +148,7 @@ const CombinedPage = () => {
               <h3 className="text-2xl font-semibold">{product.name}</h3>
               <p className="text-lg">{product.description}</p>
               <p className="text-xl font-bold text-blue-500">{product.price}</p>
-              <button className="bg-gradient-to-r from-gray-400 to-gray-700 shadow-md  text-white py-2 px-6 rounded-xl hover:bg-gray-700 transition duration-200 mt-2 ml-20">
+              <button className="bg-gradient-to-r from-gray-400 to-gray-700 shadow-md text-white py-2 px-6 rounded-xl hover:bg-gray-700 transition duration-200 mt-4">
                 Add to Cart
               </button>
             </div>
@@ -159,17 +159,17 @@ const CombinedPage = () => {
         <div className="flex justify-between items-center mb-8">
           <button
             onClick={handlePrevFeaturedPage}
-            className="bg-gradient-to-r from-green-400 to-green-700 shadow-md  text-white py-2 px-6 rounded-xl hover:bg-gray-700 transition duration-200 mt-2 ml-20"
+            className="bg-gradient-to-r from-green-400 to-green-700 shadow-md text-white py-2 px-6 rounded-xl hover:bg-gray-700 transition duration-200 mt-2"
             disabled={currentFeaturedPage === 1}
           >
             Previous
           </button>
-          <div>
+          <div className="hidden md:block">
             Page {currentFeaturedPage} of {totalFeaturedPages}
           </div>
           <button
             onClick={handleNextFeaturedPage}
-          className="bg-gradient-to-r from-green-400 to-green-700 shadow-md  text-white py-2 px-6 rounded-xl hover:bg-gray-700 transition duration-200 mt-2 ml-20"
+            className="bg-gradient-to-r from-green-400 to-green-700 shadow-md text-white py-2 px-6 rounded-xl hover:bg-gray-700 transition duration-200 mt-2"
             disabled={currentFeaturedPage === totalFeaturedPages}
           >
             Next

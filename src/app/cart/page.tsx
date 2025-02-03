@@ -55,7 +55,7 @@ const CartPage = () => {
     return cartItems.reduce((total, item) => total + item.price * item.inventory, 0);
   };
 
-  const router=useRouter()
+  const router = useRouter();
   const handleProceed = () => {
     Swal.fire({
       title: "Proceed to checkout",
@@ -71,58 +71,57 @@ const CartPage = () => {
         router.push("/checkout");
         setCartItems([]);
       }
-
     });
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-gray-100 to-blue-50 p-6">
+    <div className="min-h-screen bg-gradient-to-r from-gray-100 to-blue-50 p-4 sm:p-6">
       <div className="max-w-4xl mx-auto bg-gray-200 shadow-lg rounded-2xl overflow-hidden">
         <div className="bg-gradient-to-r from-gray-400 to-gray-700 text-white py-4 px-6">
-          <h1 className="text-xl font-bold text-center">Shopping Cart</h1>
+          <h1 className="text-lg sm:text-xl font-bold text-center">Shopping Cart</h1>
         </div>
         {cartItems.length === 0 ? (
-          <div className="p-6 text-center">
-            <p className="text-gray-500 text-lg">Your cart is empty!</p>
+          <div className="p-4 sm:p-6 text-center">
+            <p className="text-gray-500 text-base sm:text-lg">Your cart is empty!</p>
           </div>
         ) : (
-          <div className="p-6">
+          <div className="p-4 sm:p-6">
             {cartItems.map((item) => (
               <div
                 key={item._id}
-                className="flex items-center justify-between py-4 border-b last:border-b-0"
+                className="flex flex-col sm:flex-row items-center justify-between py-4 border-b last:border-b-0"
               >
-                <div className="flex items-center">
+                <div className="flex items-center w-full sm:w-auto">
                   {item.image && (
                     <Image
                       src={urlFor(item.image).url()}
                       alt={item.productName}
-                      width={80}
-                      height={80}
+                      width={60}
+                      height={60}
                       className="rounded-md"
                     />
                   )}
                   <div className="ml-4">
-                    <h2 className="text-lg font-medium">{item.productName}</h2>
-                    <p className="text-sm text-gray-500">${item.price}</p>
+                    <h2 className="text-base sm:text-lg font-medium">{item.productName}</h2>
+                    <p className="text-sm sm:text-base text-gray-500">${item.price}</p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-2 sm:space-x-4 mt-2 sm:mt-0">
                   <button
-                    className="w-8 h-8 bg-gray-200 hover:bg-gray-300 rounded-md text-lg flex justify-center items-center"
+                    className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-200 hover:bg-gray-300 rounded-md text-lg flex justify-center items-center"
                     onClick={() => handleDecrement(item._id)}
                   >
                     -
                   </button>
                   <span className="text-lg font-medium">{item.inventory}</span>
                   <button
-                    className="w-8 h-8 bg-gray-200 hover:bg-gray-300 rounded-md text-lg flex justify-center items-center"
+                    className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-200 hover:bg-gray-300 rounded-md text-lg flex justify-center items-center"
                     onClick={() => handleIncrement(item._id)}
                   >
                     +
                   </button>
                   <button
-                    className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-md"
+                    className="px-3 py-1 sm:px-4 sm:py-2 bg-red-500 hover:bg-red-600 text-white rounded-md"
                     onClick={() => handleRemoveItem(item._id)}
                   >
                     Remove
@@ -130,10 +129,10 @@ const CartPage = () => {
                 </div>
               </div>
             ))}
-            <div className="flex justify-between items-center mt-6">
+            <div className="flex flex-col sm:flex-row justify-between items-center mt-6">
               <h2 className="text-lg font-semibold">Total: ${calculatedTotal()}</h2>
               <button
-                className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg shadow-md"
+                className="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg shadow-md mt-4 sm:mt-0"
                 onClick={handleProceed}
               >
                 Proceed to Checkout

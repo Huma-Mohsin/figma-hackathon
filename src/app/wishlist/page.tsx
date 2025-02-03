@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { useState, useEffect } from "react";
 import { Product } from "../../../types/products";
 import Image from "next/image";
@@ -26,15 +26,15 @@ const WishlistPage = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center">My Wishlist</h1>
-      <p className="text-lg text-center mb-4">Total items in wishlist: {wishlistCount}</p>
+      <h1 className="text-3xl font-bold text-center mb-4">My Wishlist</h1>
+      <p className="text-lg text-center mb-8">Total items in wishlist: {wishlistCount}</p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {wishlist.length === 0 ? (
-          <p className="text-center text-gray-600">Your wishlist is empty.</p>
+          <p className="text-center text-gray-600 col-span-full">Your wishlist is empty.</p>
         ) : (
           wishlist.map((product) => (
-            <div key={product._id} className="bg-white shadow-lg p-4">
+            <div key={product._id} className="bg-white shadow-lg rounded-lg p-4">
               {/* Check if image exists, and provide fallback if not */}
               {product.image ? (
                 <Image
@@ -42,19 +42,19 @@ const WishlistPage = () => {
                   alt={product.productName}
                   width={500}
                   height={500}
-                  className="w-full h-64 object-contain mb-6"
+                  className="w-full h-48 object-contain mb-6"
                 />
               ) : (
-                <div className="w-full h-64 bg-gray-300 mb-6 flex justify-center items-center">
+                <div className="w-full h-48 bg-gray-300 mb-6 flex justify-center items-center">
                   <span>No Image Available</span>
                 </div>
               )}
 
-              <h2 className="text-2xl font-bold">{product.productName}</h2>
+              <h2 className="text-xl font-bold text-gray-800">{product.productName}</h2>
               <p className="text-lg text-blue-500 font-bold mt-2">${product.price}</p>
 
               <button
-                className="bg-red-500 text-white py-2 px-4 rounded-lg mt-2"
+                className="bg-red-500 text-white py-2 px-4 rounded-lg mt-4 w-full"
                 onClick={() => handleRemoveFromWishlist(product._id)}
               >
                 Remove ❌

@@ -96,9 +96,12 @@ const DataFetchByAPI = () => {
     <div className="max-w-6xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold text-center">Nike Products</h1>
       <h1 className="text-xl font-bold text-center">By Fetch API</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((product) => (
-          <div key={product._id} className="bg-white shadow-lg p-4">
+          <div
+            key={product._id}
+            className="bg-white shadow-lg p-4 rounded-lg transition-transform transform hover:scale-105"
+          >
             <Link href={`/products/${product.slug.current}`}>
               <Image
                 src={urlFor(product.image).url()}
@@ -117,7 +120,7 @@ const DataFetchByAPI = () => {
               </p>
 
               {/* Buttons in a single row with margin */}
-              <div className="flex space-x-4 mt-4">
+              <div className="flex flex-wrap justify-between mt-4 space-x-2">
                 {/* Add to Cart Button */}
                 <button
                   className="bg-gradient-to-r from-gray-500 to-gray-700 shadow-md text-white py-2 px-6 rounded-xl hover:bg-gray-700 transition duration-200"

@@ -79,10 +79,10 @@ export default function ProductPage({ params }: ProductPageProps) {
   };
 
   return (
-    <div className="max-w-6xl mx-auto py-10 px-4">
-      <div className="flex flex-col md:flex-row gap-10">
+    <div className="max-w-7xl mx-auto py-10 px-4">
+      <div className="flex flex-col lg:flex-row gap-8">
         {/* Left Side: Product Image */}
-        <div className="w-full md:w-1/2">
+        <div className="w-full lg:w-1/2">
           {product.image ? (
             <Image
               src={urlFor(product.image).url()}
@@ -97,17 +97,17 @@ export default function ProductPage({ params }: ProductPageProps) {
         </div>
 
         {/* Right Side: Product Details */}
-        <div className="w-full md:w-1/2 pl-8 space-y-6">
+        <div className="w-full lg:w-1/2 pl-0 lg:pl-8 space-y-6">
           {/* Product Name */}
-          <h1 className="text-4xl font-semibold text-gray-900">{product.productName}</h1>
+          <h1 className="text-3xl md:text-4xl font-semibold text-gray-900">{product.productName}</h1>
 
           {/* Category */}
-          <p className="text-xl text-gray-800 font-semibold">
-            Category: <span className=" text-blue-500">{product.category}</span>
+          <p className="text-lg md:text-xl text-gray-800 font-semibold">
+            Category: <span className="text-blue-500">{product.category}</span>
           </p>
 
           {/* Product Description */}
-          <p className="text-xl text-gray-600">{product.description}</p>
+          <p className="text-lg md:text-xl text-gray-600">{product.description}</p>
 
           {/* Available Colors */}
           {product.colors?.length > 0 ? (
@@ -124,16 +124,16 @@ export default function ProductPage({ params }: ProductPageProps) {
           )}
 
           {/* Inventory */}
-          <p className="text-xl font-bold text-orange-600">
+          <p className="text-lg md:text-xl font-bold text-orange-600">
             Inventory: <span className="font-semibold">{product.inventory}</span>
           </p>
 
           {/* Price */}
-          <p className="text-3xl text-green-600 font-semibold">Price: ${product.price}</p>
+          <p className="text-2xl md:text-3xl text-green-600 font-semibold">Price: ${product.price}</p>
 
           {/* Add to Cart Button */}
           <button
-            className="bg-gradient-to-r from-gray-500 to-gray-700 shadow-md text-white py-2 px-6 rounded-xl hover:bg-gray-700 transition duration-200 mt-2 ml-20"
+            className="bg-gradient-to-r from-gray-500 to-gray-700 shadow-md text-white py-2 px-6 rounded-xl hover:bg-gray-700 transition duration-200 mt-4 md:mt-6"
             onClick={handleAddToCart}
           >
             Add to Cart
