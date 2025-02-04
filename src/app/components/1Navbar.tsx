@@ -80,19 +80,19 @@ import {SignInButton,
               <Link href="/news" className="text-black hover:underline text-sm md:text-base">
                 New & Featured
               </Link>
-              <Link href="/men" className="text-black hover:underline text-sm md:text-base">
+              <Link href="/products" className="text-black hover:underline text-sm md:text-base">
                 Men
               </Link>
-              <Link href="/women" className="text-black hover:underline text-sm md:text-base">
+              <Link href="/products" className="text-black hover:underline text-sm md:text-base">
                 Women
               </Link>
-              <Link href="/kids" className="text-black hover:underline text-sm md:text-base">
+              <Link href="/products" className="text-black hover:underline text-sm md:text-base">
                 Kids
               </Link>
               <Link href="/products" className="text-black hover:underline text-sm md:text-base">
                 SNKRS
               </Link>
-              <Link href="/overallproducts" className="text-black hover:underline text-sm md:text-base">
+              <Link href="/products" className="text-black hover:underline text-sm md:text-base">
                 All Products
               </Link>
             </nav>
