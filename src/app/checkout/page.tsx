@@ -8,25 +8,26 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { urlFor } from '@/sanity/lib/image';
 import { CgChevronRight } from 'react-icons/cg';
+import { client } from '@/sanity/lib/client';
 
 const CheckoutPage = () => {
   const [cartItems, setCartItems] = useState<Product[]>([]);
   const [discount, setDiscount] = useState<number>(0);
   const [formValues, setFormValues] = useState({
-    FirstName: '',
-    LastName: '',
-    Email: '',
-    Address: '',
-    ShippingAddress: '',
-    City: '',
-    Country: '',
-    ZipCode: '',
-    Phone: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    address: '',
+    shippingAddress: '',
+    city: '',
+    country: '',
+    zipCode: '',
+    phone: '',
   });
   const [formErrors, setFormErrors] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
-    setCartItems(getCartItems());
+    setCartItems(getCartItems() || []); // Ensure it initializes as an array
     const appliedDiscount = localStorage.getItem('discount');
     if (appliedDiscount) {
       setDiscount(Number(appliedDiscount));
@@ -34,7 +35,7 @@ const CheckoutPage = () => {
   }, []);
 
   const subTotal = cartItems.reduce((total, item) => total + item.price * item.inventory, 0);
-  const Total = Math.max(subTotal - discount, 0);
+  const total = Math.max(subTotal - discount, 0); // Renamed for consistency
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormValues({ ...formValues, [e.target.id]: e.target.value });
@@ -49,7 +50,7 @@ const CheckoutPage = () => {
     return Object.values(errors).every((error) => !error);
   };
 
-  const handlePlaceOrder = () => {
+  const handlePlaceOrder = async () => {
     if (validateForm()) {
       localStorage.removeItem('discount');
       Swal.fire({
@@ -57,8 +58,27 @@ const CheckoutPage = () => {
         text: 'Your order has been placed successfully',
         icon: 'success',
         confirmButtonText: 'Ok',
-         width: "80%"
+        width: "20%"
       });
+    }
+
+    const orderData = {
+      _type: "order",
+      ...formValues,
+      cartItems: cartItems.map(item => ({
+        _type: "reference",
+        _ref: item._id,
+      })),
+      total: total,
+      discount: discount,
+      orderDate: new Date().toISOString(), // Fixed function call
+    };
+
+    try {
+      await client.create(orderData); // Await the API call
+      localStorage.removeItem("appliedDiscount");
+    } catch (error) {
+      console.error("Error placing order:", error);
     }
   };
 
@@ -71,7 +91,7 @@ const CheckoutPage = () => {
           <CgChevronRight className="w-4 h-4" />
           <span>Checkout</span>
         </nav>
-        
+
         {/* Responsive Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Order Summary */}
@@ -100,10 +120,10 @@ const CheckoutPage = () => {
             <div className="mt-4 text-right">
               <p className="text-sm sm:text-base">Subtotal: <span className="font-semibold">${subTotal.toFixed(2)}</span></p>
               <p className="text-sm sm:text-base">Discount: <span className="font-semibold">-${discount.toFixed(2)}</span></p>
-              <p className="text-lg sm:text-xl font-bold">Total: ${Total.toFixed(2)}</p>
+              <p className="text-lg sm:text-xl font-bold">Total: ${total.toFixed(2)}</p>
             </div>
           </div>
-          
+
           {/* Billing Information */}
           <div className="bg-white shadow-md rounded-lg p-6">
             <h2 className="text-xl font-semibold mb-4">Billing Information</h2>
@@ -136,7 +156,7 @@ const CheckoutPage = () => {
         </div>
       </div>
     </div>
-  );
+  ); 
 };
 
 export default CheckoutPage;
